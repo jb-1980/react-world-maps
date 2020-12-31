@@ -19,7 +19,7 @@ const shuffleQuestions = (questions: string[]): QuizQuestions => {
     questions[randomIndex] = temporaryValue
   }
 
-  return questions.map(q => ({ id: q, correct: null }))
+  return questions.map((q) => ({ id: q, correct: null }))
 }
 
 type reducerState = {
@@ -42,7 +42,7 @@ const reducer = (state: reducerState, action: actionType) => {
       return {
         ...state,
         guess,
-        questions: state.questions.map(q => {
+        questions: state.questions.map((q) => {
           if (q.id === question.id) {
             return { id: q.id, correct: guess === question.id }
           }
@@ -101,7 +101,7 @@ export const QuizComponent = ({ questionSet, Component }) => {
     },
   }
 
-  const mapHandler = event =>
+  const mapHandler = (event) =>
     dispatch({ type: "CLICK_MAP", guess: event.target.dataset.name })
 
   const FeedbackModal = () => (
@@ -125,7 +125,7 @@ export const QuizComponent = ({ questionSet, Component }) => {
             <div>
               You scored{" "}
               {(
-                (questions.filter(q => q.correct).length / questions.length) *
+                (questions.filter((q) => q.correct).length / questions.length) *
                 100
               ).toFixed(0)}
               %
@@ -145,7 +145,7 @@ export const QuizComponent = ({ questionSet, Component }) => {
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <div style={{ display: "flex" }}>
-        {questions.map(q => (
+        {questions.map((q) => (
           <div
             key={q.id}
             style={{

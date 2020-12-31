@@ -1,22 +1,22 @@
-import * as React from 'react';
-import { MapComponent } from './map-component';
-import { defaultClickHandler as clickHandler } from '../util';
+import * as React from "react"
+import { MapComponent } from "./map-component"
+import { defaultClickHandler as clickHandler } from "../util"
 
 export const ComposedMap = ({
   data,
   defaultClickHandler = clickHandler,
   viewBox = [959, 593],
-  title = 'React World Map',
+  title = "React World Map",
   customize = {},
   hideTitles,
 }: ComposedMapProps) => {
-  let populatedData = data.map(d => ({
+  let populatedData = data.map((d) => ({
     ...d,
     title: d.name,
     onClick: defaultClickHandler,
     hideTitle: hideTitles,
     ...(customize[d.name] && customize[d.name]),
-  }));
+  }))
   return (
     <svg
       className="react-world-map"
@@ -27,8 +27,8 @@ export const ComposedMap = ({
     >
       <title>{title}</title>
       <g className="outlines">
-        {populatedData.map(meta => {
-          let { name, d, onClick, title, hideTitle, ...pathAttributes } = meta;
+        {populatedData.map((meta) => {
+          let { name, d, onClick, title, hideTitle, ...pathAttributes } = meta
           return (
             <MapComponent
               key={name}
@@ -39,9 +39,9 @@ export const ComposedMap = ({
               hideTitle={hideTitle}
               {...pathAttributes}
             />
-          );
+          )
         })}
       </g>
     </svg>
-  );
-};
+  )
+}

@@ -65,7 +65,7 @@ const App = () => {
         >
           <h3>Which map do you want to practice?</h3>
 
-          {Object.keys(quizzes).map(q => (
+          {Object.keys(quizzes).map((q) => (
             <button
               style={{
                 background: "#fff",

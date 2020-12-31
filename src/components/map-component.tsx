@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react"
 
 export const MapComponent = ({
   name,
@@ -20,5 +20,5 @@ export const MapComponent = ({
     >
       {hideTitle ? null : <title>{title}</title>}
     </path>
-  );
-};
+  )
+}

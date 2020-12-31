@@ -17,7 +17,8 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "prettify": "git ls-files *.ts *.tsx *.js *.jsx *.json | xargs prettier --write"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -51,6 +52,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "husky": "^4.3.6",
+    "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
